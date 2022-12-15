@@ -93,7 +93,13 @@ index_to_chapter <- function(index) {
     index == 0 ~ "Canada",
     index == 1 ~ "Toronto",
     index == 2 ~ "Waterloo",
-    index == 3 ~ "Regina"
+    index == 3 ~ "Regina",
+    index == 4 ~ "Vancouver",
+    index == 5 ~ "Edmonton",
+    index == 6 ~ "Calgary",
+    index == 7 ~ "Montreal",
+    index == 8 ~ "Halifax",
+    index == 9 ~ "Ottawa"
   )
 }
 
@@ -297,8 +303,8 @@ ui <- bootstrapPage(
         
         # Input Select; selects the Data for Good chapter location to view
         # NOTE: The "selectTable" and "selectMap" inputs are connected
-        selectInput("selectMap", width = "100%", label = NULL, choices = list("Canada" = 0, "Toronto" = 1, "Waterloo" = 2, "Regina" = 3), selected = 0),
-        
+        selectInput("selectMap", width = "100%", label = NULL, choices = list("Canada" = 0, "Toronto" = 1, "Waterloo" = 2, "Regina" = 3, "Vancouver" = 4, "Edmonton" = 5, "Calgary" = 6, "Montreal" = 7, "Halifax" = 8, "Ottawa" = 9), selected = 0),
+
         # Map Legend
         div(class = "detail-sec detail-label", "Legend", style = "margin-bottom: 5px;"),
         div(circle_div(20, dfg_blue, style = "margin-right: 0.5rem;"), "DfG Chapter", style = "display: flex; align-items: center; padding: 5px;"),
@@ -328,7 +334,7 @@ ui <- bootstrapPage(
             
             # Input Select; filters reactable by Data for Good chapter location
             # NOTE: The "selectTable" and "selectMap" inputs are connected
-            selectInput("selectTable", width = "100%", label = NULL, choices = list("Canada" = 0, "Toronto" = 1, "Waterloo" = 2, "Regina" = 3), selected = 0),
+            selectInput("selectTable", width = "100%", label = NULL, choices = list("Canada" = 0, "Toronto" = 1, "Waterloo" = 2, "Regina" = 3, "Vancouver" = 4, "Edmonton" = 5, "Calgary" = 6, "Montreal" = 7, "Halifax" = 8, "Ottawa" = 9), selected = 0),
             
             # Input Select Label
             div(class = "detail-sec detail-label", "Organization Select", style = "margin-bottom: 5px;"),
@@ -404,6 +410,18 @@ server <- function(input, output) {
       leafletProxy("org_map") |> setView(lat = 43.4643, lng = -80.5204, zoom = 13)
     } else if (input$selectMap == 3) {
       leafletProxy("org_map") |> setView(lat = 50.4452, lng = -104.6189, zoom = 13)
+    } else if (input$selectMap == 4) {
+      leafletProxy("org_map") |> setView(lat = 49.2827, lng = -123.1207, zoom = 13)
+    } else if (input$selectMap == 5) {
+      leafletProxy("org_map") |> setView(lat = 53.5461, lng = -113.4937, zoom = 13)
+    } else if (input$selectMap == 6) {
+      leafletProxy("org_map") |> setView(lat = 51.0447, lng = -114.0719, zoom = 13)
+    } else if (input$selectMap == 7) {
+      leafletProxy("org_map") |> setView(lat = 45.5019, lng = -73.5674, zoom = 13)
+    } else if (input$selectMap == 8) {
+      leafletProxy("org_map") |> setView(lat = 44.6476, lng = -63.5728, zoom = 13)
+    } else if (input$selectMap == 9) {
+      leafletProxy("org_map") |> setView(lat = 45.4215, lng = -75.6972, zoom = 13)
     } else {
       leafletProxy("org_map") |> setView(lng = -108, lat = 60, zoom = 4)
     }
@@ -413,12 +431,24 @@ server <- function(input, output) {
   # Filter Reactable via selectTable input
   observeEvent(input$selectTable, {
     
-    if (input$selectTable == 1) {
+    if (input$selectMap == 1) {
       leafletProxy("org_map") |> setView(lat = 43.65332, lng = -79.38398, zoom = 13)
-    } else if (input$selectTable == 2) {
+    } else if (input$selectMap == 2) {
       leafletProxy("org_map") |> setView(lat = 43.4643, lng = -80.5204, zoom = 13)
-    } else if (input$selectTable == 3) {
+    } else if (input$selectMap == 3) {
       leafletProxy("org_map") |> setView(lat = 50.4452, lng = -104.6189, zoom = 13)
+    } else if (input$selectMap == 4) {
+      leafletProxy("org_map") |> setView(lat = 49.2827, lng = -123.1207, zoom = 13)
+    } else if (input$selectMap == 5) {
+      leafletProxy("org_map") |> setView(lat = 53.5461, lng = -113.4937, zoom = 13)
+    } else if (input$selectMap == 6) {
+      leafletProxy("org_map") |> setView(lat = 51.0447, lng = -114.0719, zoom = 13)
+    } else if (input$selectMap == 7) {
+      leafletProxy("org_map") |> setView(lat = 45.5019, lng = -73.5674, zoom = 13)
+    } else if (input$selectMap == 8) {
+      leafletProxy("org_map") |> setView(lat = 44.6476, lng = -63.5728, zoom = 13)
+    } else if (input$selectMap == 9) {
+      leafletProxy("org_map") |> setView(lat = 45.4215, lng = -75.6972, zoom = 13)
     } else {
       leafletProxy("org_map") |> setView(lng = -108, lat = 60, zoom = 4)
     }
