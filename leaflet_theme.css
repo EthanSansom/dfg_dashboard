@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        
+/* Set the font of everything to Montserrat (Data for Good font) */
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Set the base font size */
+html {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 500px) {
+  html { 
+    font-size: 12px;
+  }
+}
+        
+/* Wrapper for the Leaflet map - this is the ONLY THING that makes fullscreen work.
+   Specifically the top: 56px; parameter is required or everything breaks.
+   See: https://github.com/eparker12/nCoV_tracker */
+div.outer {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Over-ride the leaflet zoom control position to bottom of window */
+.leaflet-top {
+  bottom: 0;
+  top: unset;
+}
+
+/* Position the leaflet zoom controller to match Info Button at bottom left of window */
+.leaflet-left .leaflet-control {
+  margin-left: 15px;
+}
+
+.leaflet-top .leaflet-control {
+    margin-bottom: 30px;
+}
+
+/* Set the border color of leaflet zoom controller */
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+  border: none;
+  background-clip: padding-box;
+}
+
+leaflet-control-zoom-in {
+  border: none;
+}
+
+leaflet-control-zoom-out {
+  border: none;
+  margin-top: 10px;
+}
+
+/* Add space between the leaflet zoom-in and zoom-out controls */
+.leaflet-touch .leaflet-bar a:last-child {
+  margin-top: 5px;
+}
+
+/* Set the size of the leaflet zoom controller */
+.leaflet-touch .leaflet-bar a {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 4px;
+}
+
+/* Round the corners of the leaflet zoom controller to match Info Button */
+.leaflet-touch .leaflet-bar a:last-child, .leaflet-touch .leaflet-bar a:first-child {
+  border-radius: 4px;
+}
+
+/* Remove the border between the leaflet zoom-in and zoom-out controls */
+.leaflet-bar a, .leaflet-bar a:hover {
+  border-bottom: none;
+}
+
+/* PRETTY CHECKBOX (shinyWidgets::prettyCheckbox) */
+
+/* Appearance of checkbox when checked */
+.pretty.p-icon input:checked~.state .icon {
+  opacity: 1;
+  /* Same color as the leaflet zoom controller */
+  background-color: #f4f4f4;
+  border-radius: 4px;
+}
+
+/* Remove or hide undesired elements of default checkbox */
+.pretty.p-round .state label:before {
+  border: none;
+}
+
+.pretty.p-round .state label:after {
+  border: none;
+}
+
+.pretty .state label {
+  visibility: hidden;
+}
+
+/* Set children within the button container to full size */
+div.button-container * {
+  width: 100%;
+  height: 100%;
+}
+
+/* Make the icon within button container full size */
+div.button-container .pretty.p-icon .state .icon {
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  position: absolute;
+  opacity: 1;
+  top: 0;
+}

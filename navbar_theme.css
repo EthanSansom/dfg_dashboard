@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+          
+        /* Set the font of everything to Montserrat (Data for Good font) */
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Set the base font size */
+html {
+    font-size: 14px;
+}
+
+/* Below 500px bring the base font size down to 12px */
+@media screen and (max-width: 500px) {
+    html { 
+        font-size: 12px;
+    }
+}
+
+/* Below 700px increase the size of the Leaflet Info Menu */
+@media (max-width: 700px) {
+    div#infoPage {
+        width: 50% !important;
+    }
+}
+
+/* Set progress bar animation to full width below 1000px */
+@media (max-width: 1000px) {
+    .progress-bar {
+        width: 100% !important;
+    }
+}
+
+/* Variables, control default color */
+:root {
+    --dark-grey: #707176;
+    --light-grey: #EEEEEE;
+    --dfg-red: #F28065;
+    --dfg-purple: #A682B8;
+    --dfg-green: #89C148;
+    --dfg-blue: #73D0F5;
+}
+
+body {
+    font-size: 1rem;
+    color: black;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+/* SHINY NAVBAR */
+
+.navbar {
+    border-width: 0;
+    /* Matches the box-shadow from Reactable */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar-default {
+    background-color: white;
+}
+
+/* Mobile navbar icon color */
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: black;
+}
+
+/* Position the Data for Good logo image */
+.navbar-brand {
+    padding-top: 10px;
+    padding-bottom: 7px;
+}
+
+/* Default navbar menu text appearance */
+.navbar-default .navbar-nav > li > a {
+    color: black;
+    box-shadow: none;
+    margin-left: 10px;
+    transition: box-shadow-color 0.2s ease-in-out;
+}
+
+/* Hover navbar menu text appearance */
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: black;
+    box-shadow: 0 2px 1px -1px black;
+    background-color: transparent;
+}
+
+/* Active navbar menu text appearance */
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: black;
+    box-shadow: 0 2px 1px -1px black;
+    background-color: transparent;
+}
+
+/* Mobile Navar Hover Appearance */
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: transparent;
+}
+
+/* REACTABLE */
+
+/* Reactable drop-down style */
+.org-detail {
+    padding: 1em;
+    box-shadow: inset 0 1px 3px #dbdbdb;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Leaflet pop-up style */
+.org-popup {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Links within org popup */
+.org-popup a {
+    text-decoration: none;
+    color: #BEBDBD;
+    font-size: 1rem;
+}
+
+.detail-header {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.detail-desc {
+    font-weight: 400;
+    font-size: 1rem;
+    color: black;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.detail-sec {
+    margin-bottom: 1rem;
+}
+
+.detail-label {
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--dark-grey);
+    white-space: nowrap;
+}
+
+/* Add right margin to children a elements of detail-socials */
+.detail-socials a {
+    margin-right: 0.5rem;
+    color: #BEBDBD;
+}
+
+/* Progress bar loading animation */
+@keyframes progressBar {
+    0% {width: 0%;}
+    100% {width: 50%;}
+}
+
+.progress-bar {
+    background-color: var(--light-grey);
+    box-shadow: none;
+    overflow: hidden;
+    border-radius: 2px;
+    height: 5px;
+    width: 33%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.bar-start {
+    height: 100%;
+    background-color: var(--dfg-red);
+    width: 0%;
+    animation: progressBar 1s 0s ease-out forwards;
+}
