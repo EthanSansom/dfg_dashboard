@@ -363,14 +363,14 @@ ui <- bootstrapPage(
       # Code
       div(
         class = "detail-sec detail-header", "Code", style = "white-space: nowrap;", 
-        div(class = "detail-desc detail-sec", "The code used to generate this Shiny is available on ", a(href = "#", "Github.")),
+        div(class = "detail-desc detail-sec", "The code used to generate this Shiny is available on ", a(href = "https://github.com/EthanSansom/dfg_dashboard", "Github.")),
         div(class = "detail-desc detail-sec", "This website's design and implementation draw heavily from Greg Lin's {reactable} package demo, ", a(href = 'https://glin.github.io/reactable/articles/cran-packages/cran-packages.html', 'CRAN Packages'), ", and Edward Parker and Quentin Leclerc's ", a(href = 'https://vac-lshtm.shinyapps.io/ncov_tracker/#', 'Covid-19 Tracker.'))
       ),
       
       # Author
       div(
         class = "detail-sec detail-header", "Author", style = "white-space: nowrap;", 
-        div(class = "detail-desc", "Ethan Sansom ", a(href = "#", tags$i(class = "fa-brands fa-twitter")), a(href = "#", tags$i(class = "fa-brands fa-github")), a(href = "#", tags$i(class = "fa-brands fa-linkedin-in")))
+        div(class = "detail-desc", "Ethan Sansom ", a(href = "https://twitter.com/EthanSansom2", tags$i(class = "fa-brands fa-twitter")), a(href = "https://github.com/EthanSansom", tags$i(class = "fa-brands fa-github")), a(href = "https://www.linkedin.com/in/ethansansom/", tags$i(class = "fa-brands fa-linkedin-in")))
       )
     )
   )
