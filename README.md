@@ -6,7 +6,7 @@ This GitHub contains the code for the [Data for Good Dashboard](https://7wouif-e
 Data for Good began as a single chapter in Toronto, and has since grown nationwide, with chapters in Vancouver, Calgary, Edmonton, Regina, Ottawa, Toronto, Waterloo, and Montreal.
 
 ## Data
-Currently, the data (including hyperlinks) in this dashboard is a *placeholder*. In practice, the Data for Good dashboard provides information about the Data for Good chapters, including their locations and current leadership teams, and information on Data for Good's Partner and Affiliate organizations.
+Currently, the data (including hyperlinks) in this dashboard is a **placeholder**. In practice, the Data for Good dashboard provides information about the Data for Good chapters, including their locations and current leadership teams, and information on Data for Good's Partner and Affiliate organizations.
 
 ## Shiny Application
 
